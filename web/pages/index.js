@@ -11,9 +11,50 @@ import HomePageContainer, {
 
 const HomePage = ({ graphicsCards }) => {
 
-  const [gCardsList, setGCardsList] = useState(graphicsCards);
+  //const [gCardsList, setGCardsList] = useState(graphicsCards);
 
-  
+  let gCardsList = [
+    {
+      _id: 1,
+      name: "NVIDIA GeForce RTX 3080 10GB",
+      description: "The GeForce RTX 3080 delivers the ultra performance that gamers crave, powered by Ampere—NVIDIA’s 2nd gen RTX architecture. It’s built with enhanced RT Cores and Tensor Cores, new streaming multiprocessors, and superfast G6X memory for an amazing gaming experience.",
+      price: "699.99",
+      stock: '2',
+      date: '6/10/21 15:34:22'
+    },
+    {
+      _id: 1,
+      name: "NVIDIA GeForce RTX 3080 10GB",
+      description: "The GeForce RTX 3080 delivers the ultra performance that gamers crave, powered by Ampere—NVIDIA’s 2nd gen RTX architecture. It’s built with enhanced RT Cores and Tensor Cores, new streaming multiprocessors, and superfast G6X memory for an amazing gaming experience.",
+      price: "699.99",
+      stock: '2',
+      date: '6/10/21 15:34:22'
+    },
+    {
+      _id: 1,
+      name: "NVIDIA GeForce RTX 3080 10GB",
+      description: "The GeForce RTX 3080 delivers the ultra performance that gamers crave, powered by Ampere—NVIDIA’s 2nd gen RTX architecture. It’s built with enhanced RT Cores and Tensor Cores, new streaming multiprocessors, and superfast G6X memory for an amazing gaming experience.",
+      price: "699.99",
+      stock: '2',
+      date: '6/10/21 15:34:22'
+    },
+    {
+      _id: 1,
+      name: "NVIDIA GeForce RTX 3080 10GB",
+      description: "The GeForce RTX 3080 delivers the ultra performance that gamers crave, powered by Ampere—NVIDIA’s 2nd gen RTX architecture. It’s built with enhanced RT Cores and Tensor Cores, new streaming multiprocessors, and superfast G6X memory for an amazing gaming experience.",
+      price: "699.99",
+      stock: '2',
+      date: '6/10/21 15:34:22'
+    },
+    {
+      _id: 1,
+      name: "NVIDIA GeForce RTX 3080 10GB",
+      description: "The GeForce RTX 3080 delivers the ultra performance that gamers crave, powered by Ampere—NVIDIA’s 2nd gen RTX architecture. It’s built with enhanced RT Cores and Tensor Cores, new streaming multiprocessors, and superfast G6X memory for an amazing gaming experience.",
+      price: "699.99",
+      stock: '2',
+      date: '6/10/21 15:34:22'
+    },
+]
 
   return (
     <HomePageContainer>
@@ -31,38 +72,42 @@ const HomePage = ({ graphicsCards }) => {
           </div>
         </div>
         <div className="content">
-          <div className="card">
+          <div className="stock">
             <div className="sub-title">Recent Checkouts</div>
             <div className="cards">
-              <ul>
-                {gCardsList.map((gCard) => (
-                  <Link href={/graphicsCard/ + gCard._id}>
-                    <Card>
-                      <CardHeader
-                        title={gCard.name}
-                        subheader={"Price " + gCard.price}
-                      ></CardHeader>
-                    </Card>
-                  </Link>
-                ))}
-              </ul>
+              {gCardsList.map((gCard) => (
+                <Link href={/graphicsCard/ + gCard._id}>
+                  <Card className="card">
+                    <CardHeader
+                      title={gCard.name}
+                      subheader={"Price " + gCard.price}
+                    ></CardHeader>
+                    <div className="gCard-info-wrapper">
+                      <div className="gCard-info">{`Stock: ${gCard.stock} -`}</div>
+                      <div className="gCard-info">{`Date: ${gCard.date}`}</div>
+                    </div>
+                  </Card>
+                </Link>
+              ))}
             </div>
           </div>
-          <div className="card">
+          <div className="stock">
             <div className="sub-title">Recent Stock Updates</div>
             <div className="cards">
-              <ul>
-                {gCardsList.map((gCard) => (
-                  <Link href={/graphicsCard/ + gCard._id}>
-                    <Card>
-                      <CardHeader
-                        title={gCard.name}
-                        subheader={"Price " + gCard.price}
-                      ></CardHeader>
-                    </Card>
-                  </Link>
-                ))}
-              </ul>
+              {gCardsList.map((gCard) => (
+                <Link href={/graphicsCard/ + gCard._id}>
+                  <Card className="card">
+                    <CardHeader
+                      title={gCard.name}
+                      subheader={"Price " + gCard.price}
+                    ></CardHeader>
+                    <div className="gCard-info-wrapper">
+                      <div className="gCard-info">{`Stock: ${gCard.stock} -`}</div>
+                      <div className="gCard-info">{`Date: ${gCard.date}`}</div>
+                    </div>
+                  </Card>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
@@ -71,13 +116,5 @@ const HomePage = ({ graphicsCards }) => {
   );
 };
 
-HomePage.getInitialProps = async function ({ req, res, query }) {
-  const {data} = await Axios.get(`/graphicsCard/all`);
-  const { graphicsCards } = data;
-
-  return {
-    graphicsCards,
-  };
-};
 
 export default HomePage;

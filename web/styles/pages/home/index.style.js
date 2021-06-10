@@ -28,7 +28,7 @@ const HomePageContainer = styled.div`
     margin-top: 100px;
     display: flex;
     flex-direction: row;
-    .card {
+    .stock {
       background-color: #465571;
       border-left: 2px solid #4e7ddc;
       margin-right: 10px;
@@ -37,6 +37,28 @@ const HomePageContainer = styled.div`
         font-size: 18px;
         margin-bottom: 10px;
         font-weight: bold;
+      }
+      .card {
+        margin-top: 10px;
+        .gCard-info-wrapper {
+          display: flex;
+          margin-left: 14px;
+          margin-bottom: 10px;
+        }
+        .gCard-info {
+          margin-right: 4px;
+          opacity: .7;
+        }
+      }
+      .MuiCard-root {
+        margin-bottom: 15px;
+        outline-color: blue;
+        background-color: #5c7096;
+        color: white;
+      }
+      .MuiCard-root:hover {
+        opacity: .8;
+        cursor: pointer;
       }
     }
   }
