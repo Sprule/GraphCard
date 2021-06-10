@@ -18,8 +18,6 @@ const HomePageContainer = styled.div`
       }
       .seach-input {
         width: 100%;
-        outline: none;
-        background: white;
       }
     }
     margin-bottom: 50px;
