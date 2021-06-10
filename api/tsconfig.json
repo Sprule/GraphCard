@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+		"esModuleInterop": true,
+		"importHelpers": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "ES2019",
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+    "lib": ["ES2019"]
+  },
+  "include": ["src/**/*.ts", "src/routes/auth.routes.js", "src/models/user.model.js"]
+}
