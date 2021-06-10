@@ -74,6 +74,7 @@ const SignUpPage = () => {
           label="Password"
           variant="outlined"
           required
+          type="password"
           error={passwordError}
           helperText={passwordErrorText}
           value={password}
@@ -84,6 +85,7 @@ const SignUpPage = () => {
           label="Confirm Password"
           variant="outlined"
           required
+          type="password"
           error={confirmPasswordError}
           helperText={confirmPasswordErrorText}
           value={confirmPassword}

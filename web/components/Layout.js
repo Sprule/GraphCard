@@ -2,7 +2,8 @@ import Head from 'next/head';
 import LayoutContainer from './Layout.style';
 import NavBar from './Navbar';
 
-const UserLayout = ({ children }) => (
+const UserLayout = ({ children }) => {
+  return (
   <LayoutContainer>
     <Head>
       <title key="title">GraphCard</title>
@@ -15,6 +16,6 @@ const UserLayout = ({ children }) => (
     <NavBar />
     <div className="page-content">{children}</div>
   </LayoutContainer>
-);
+)};
 
 export default UserLayout;

@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import { Container, TextField } from '@material-ui/core';
 
 const ProfileContainer = styled(Container)`
+  margin: 0 auto;
+  max-width: 1224px;
+  margin-top: 100px;
   .title {
     font-size: 24px;
     font-weight: bold;

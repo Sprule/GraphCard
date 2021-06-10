@@ -40,21 +40,7 @@ const ProfileSettingsPage = () => {
       <u><Link href={`/profile/${username}`}>
         My profile page
       </Link></u>
-      <p>Username: {username} </p>
-      <p>Bio: {bio}</p>
-      <form className="input" noValidate onSubmit={changeUsername}>
-        <StyledTextField
-          id="outlined-basic"
-          label="Username"
-          variant="outlined"
-          required
-          value={usernameInput}
-          onChange={(event) => setUsernameInput(event.target.value)}
-        />
-        <Button variant="contained" color="primary" type="submit">
-          Update
-        </Button>
-      </form>
+      <p><b>Bio:</b> {bio}</p>
       <form className="input" noValidate onSubmit={changeBio}>
         <StyledTextField
           id="outlined-basic"

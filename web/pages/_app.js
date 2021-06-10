@@ -6,14 +6,16 @@ import Layout from '../components/Layout';
 import UserProvider from '../providers/UserProvider';
 import RealtimeProvider from '../providers/RealtimeProvider';
 import auth from '../auth/auth';
+import materialTheme from '../styles/materialTheme'
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core'
+import { StylesProvider } from "@material-ui/styles";
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
+  main: "white"
 };
+
 // Import the CSS
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
@@ -24,25 +26,15 @@ function MyApp({ Component, pageProps }) {
   return (
     <UserProvider userSession={pageProps.userSession}>
       <RealtimeProvider>
-        <ThemeProvider theme={theme}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeProvider>
+        <StylesProvider injectFirst>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </StylesProvider>
       </RealtimeProvider>
     </UserProvider>
   );
 }
 
-MyApp.getInitialProps = async ({ Component, ctx }) => {
-  const pageProps = {};
-  pageProps.userSession = await auth.init(ctx.req, ctx.res); // set user context
-
-  if (Component.getInitialProps) {
-    const pageSpecificProps = await Component.getInitialProps(ctx);
-    Object.assign(pageProps, pageSpecificProps);
-  }
-  return { pageProps };
-};
 
 export default MyApp;

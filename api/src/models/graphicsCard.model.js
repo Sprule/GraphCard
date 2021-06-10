@@ -8,6 +8,7 @@ const graphicsCardSchema = new Schema({
   brand: String,
   price: Number,
   stock: Number,
+  sites: [{type: mongoose.Schema.Types.ObjectId, ref: 'Site'}],
   createDate: { type: Date, default: Date.now },
 });
 

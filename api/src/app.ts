@@ -45,8 +45,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // mongo connection to online cluster
-// const mongoUrl = process.env.MONGO_URL
-const mongoUrl = 'mongodb://localhost:27017/graphCard'
+const mongoUrl = process.env.MONGO_URL
+//const mongoUrl = 'mongodb://localhost:27017/graphCard'
 
 mongoose
   .connect(mongoUrl, {useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false})

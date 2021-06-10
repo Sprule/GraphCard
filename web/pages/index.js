@@ -13,6 +13,8 @@ const HomePage = ({ graphicsCards }) => {
 
   const [gCardsList, setGCardsList] = useState(graphicsCards);
 
+  
+
   return (
     <HomePageContainer>
       <div>
@@ -22,22 +24,46 @@ const HomePage = ({ graphicsCards }) => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         {/* Style this later */}
-        <div className="welcome">Welcome to Graph Card</div>
-        <div className="header">
-          <div className="sub-title">In-stock Graphics Cards:</div>
-          <div className="cards">
-            <ul>
-              {gCardsList.map((gCard) => (
-                <Link href={/graphicsCard/ + gCard._id}>
-                  <Card>
-                    <CardHeader
-                      title={gCard.name}
-                      subheader={"Price " + gCard.price}
-                    ></CardHeader>
-                  </Card>
-                </Link>
-              ))}
-            </ul>
+        <div className="hero-banner">
+          <div className="banner-content">
+            <div className="welcome">Welcome to <br></br>Graph Card</div>
+            <div className="catch-phrase">Never miss a gpu drop again</div>
+          </div>
+        </div>
+        <div className="content">
+          <div className="card">
+            <div className="sub-title">Recent Checkouts</div>
+            <div className="cards">
+              <ul>
+                {gCardsList.map((gCard) => (
+                  <Link href={/graphicsCard/ + gCard._id}>
+                    <Card>
+                      <CardHeader
+                        title={gCard.name}
+                        subheader={"Price " + gCard.price}
+                      ></CardHeader>
+                    </Card>
+                  </Link>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="card">
+            <div className="sub-title">Recent Stock Updates</div>
+            <div className="cards">
+              <ul>
+                {gCardsList.map((gCard) => (
+                  <Link href={/graphicsCard/ + gCard._id}>
+                    <Card>
+                      <CardHeader
+                        title={gCard.name}
+                        subheader={"Price " + gCard.price}
+                      ></CardHeader>
+                    </Card>
+                  </Link>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

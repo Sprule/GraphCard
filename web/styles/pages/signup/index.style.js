@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import TextField from '@material-ui/core/TextField';
 
 const SignUpContainer = styled.div`
+  margin: 0 auto;
+  max-width: 1224px;
+  margin-top: 100px;
   .title {
     font-size: 24px;
     font-weight: bold;
@@ -13,7 +16,7 @@ const SignUpContainer = styled.div`
     max-width: 400px;
   }
   a {
-    color: blue;
+    color: #7c80ff;
   }
 `;
 

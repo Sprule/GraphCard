@@ -20,11 +20,12 @@ const Navbar = () => {
   return (
     <NavbarContainer>
       <div className="content">
-        <div className="logo">
-          <Link href="/">
-            <a>GraphCard</a>
-          </Link>
-        </div>
+        <Link href="/">
+          <div className="logo-container">
+            <img className='logo' src="/logo.png"></img>
+            GraphCard
+          </div>
+        </Link>
         <div style={{ flex: 1 }} />
         {!userContext.user && (
           <div className="buttons">

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const NavbarContainer = styled.div`
   width: 100vw;
   height: 50px;
-  background-color: #5959ff;
+  background-color: #263044;
   color: white;
   .content {
     margin: 0 auto;
@@ -13,10 +13,18 @@ const NavbarContainer = styled.div`
     flex-direction: row;
     align-items: center;
   }
-  .logo {
+  .logo-container {
     color: white;
     font-weight: bold;
     font-size: 18px;
+    display: flex;
+    .logo {
+      width: 30px;
+      margin-right: 6px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
   }
   .buttons {
     display: flex;
@@ -29,7 +37,7 @@ export const NavButton = styled.div`
   border-radius: 3px;
   background-color: white;
   border: 2px solid transparent;
-  color: blue;
+  color: #5d76a8;
   &:hover {
     background-color: transparent;
     border: 2px solid white;
