@@ -8,6 +8,7 @@ import { useState, useContext, useEffect } from "react";
 import HomePageContainer, {
   StyledTextField,
 } from "../styles/pages/home/index.style.js";
+import TextField from '@material-ui/core/TextField';
 
 const HomePage = ({ graphicsCards }) => {
 
@@ -69,6 +70,7 @@ const HomePage = ({ graphicsCards }) => {
           <div className="banner-content">
             <div className="welcome">Welcome to <br></br>Graph Card</div>
             <div className="catch-phrase">Never miss a gpu drop again</div>
+            <TextField className="seach-input" id="outlined-basic" label="Search a GPU" variant="outlined" />
           </div>
         </div>
         <div className="content">

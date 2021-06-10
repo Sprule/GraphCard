@@ -14,6 +14,12 @@ const HomePageContainer = styled.div`
       .catch-phrase {
         font-size: 22px;
         opacity: .8;
+        margin-bottom: 40px;
+      }
+      .seach-input {
+        width: 100%;
+        outline: none;
+        background: white;
       }
     }
     margin-bottom: 50px;

@@ -26,6 +26,21 @@ const Navbar = () => {
             GraphCard
           </div>
         </Link>
+        <div className="nav-link">
+          <a href="/">
+            Search
+          </a>
+        </div>
+        <div className="nav-link">
+          <a href="/">
+            Forums
+          </a>
+        </div>
+        <div className="nav-link">
+          <a href="/">
+            About
+          </a>
+        </div>
         <div style={{ flex: 1 }} />
         {!userContext.user && (
           <div className="buttons">

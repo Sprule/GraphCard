@@ -13,11 +13,19 @@ const NavbarContainer = styled.div`
     flex-direction: row;
     align-items: center;
   }
+  .nav-link {
+    margin: 0px 20px;
+    opacity: .8;
+    &:hover {
+      opacity: 1;
+    }
+  }
   .logo-container {
     color: white;
     font-weight: bold;
     font-size: 18px;
     display: flex;
+    margin-right: 20px;
     .logo {
       width: 30px;
       margin-right: 6px;
